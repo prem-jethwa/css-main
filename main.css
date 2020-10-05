@@ -1,0 +1,94 @@
+.pj{
+    text-align: center; 
+    color: orangered; 
+    background-color: rgb(238, 190, 142); 
+    font-weight: 900; 
+    font-size: 24px;
+    padding: .2em;
+}
+
+.mypj:hover{
+    background: transparent;
+    color: orangered;
+}
+
+.footer{
+    background: var(--bg-nav);
+    font-size: 18px;
+}
+.container{
+    max-width: 920px;
+    margin: 0 auto;
+    padding-left: 5em;
+   
+}
+
+.has-dropdown{
+    border: 3px var(--text) solid;
+    padding: .5em 1em;
+    border-radius: 10px;
+}
+
+.has-dropdown:hover{
+    
+    background: var(--bg-solar);
+}
+
+
+.dummy-p{
+    text-align: center;
+    margin: .5em;
+    padding: 1em;
+}
+
+.d-grid{
+    display: grid;
+    margin-left: 5em;
+    padding-bottom: 3em;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/* typography of main content */
+
+.pera{
+    padding: .5rem;
+}
+
+.p-heading{
+    color: var(--bg-solar);
+}
+
+.compo-heading{
+    font-size: 20px;
+}
+
+.compo{
+    font-weight: 100;
+    font-size: 18px;
+}
+
+/* typography end */
+@media only screen and (max-width: 900px) {
+    .container{
+        padding-left: 5em;
+    }
+    .d-grid{
+        display: grid;
+        margin-left: 5em;
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        padding-left: .5em;
+    }
+    .d-grid{
+        display: grid;
+        margin-left: .5em;
+        padding-bottom: 4em;
+        grid-template-columns: 1fr ;
+    }
+}
+

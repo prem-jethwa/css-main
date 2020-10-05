@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out ;
+}
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+
+/* header section */
+
+header{
+    padding: 1em;
+    clip-path: polygon(50% 2%, 100% -1px, 95% 60%, 50.85% 95%,5% 60%, 4px -5px);
+    background: var(--bg-nav);
+    margin-bottom: 1em;
+    padding-bottom:5em ;
+    text-align: center;
+    margin-left: 4em;
+}
+
+/* nav section */
+.navbar{
+    height: 70px;
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px ;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+/* dropdown theme menu */
+
+.dropdown{
+    position: absolute;
+    width: 500px;
+    opacity: 0;
+    z-index: 2;
+    background: var(--bg-dropdown);
+    border-top: 2px solid var(--text);
+    color: var(--text);
+
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px ;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+    margin-top: 1.5rem;
+    padding: 0;
+
+    box-shadow: rgba(2,8,20, 0.1) 0px 0.175em 0.5em;
+    transform:  translateX(-60%);
+
+    transition: opacity .15s ease-out;
+}
+
+.has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown-item a{
+    width: 100%;
+    height: 100%;
+    size: 0.7rem;
+    padding: 10px ;
+    font-weight: bold;
+}
+
+.dropdown-item a::before {
+    content: '';
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/************ chainging theme MAIN part of css ***************/
+
+
+
+:root {
+    --gray0:#e8ecf3 ;
+    --gray1:#b1c0bd ;
+    --gray2:#91A198;
+    --gray3:#7E9181;
+    --gray4:#56635A;
+    --gray5:#56635A;
+    --gray6:#424C46 ;
+    --gray7:#262b28 ;
+    --gray8:#1b1d1c ;
+    --blue: #02adb3;
+    --purple:#7400B8;
+    --yellow:#FFD166;
+}
+
+.light {
+    --bg: var(--gray0);
+    --bg-nav: linear-gradient( to right, var(--gray1), var(--gray3));
+    --bg-dropdown: var(--gray0);
+    --text : var(--gray7);
+    --border-color : var(--blue);
+    --bg-solar: var(--blue);
+    --bg-nav-slide : var(--gray3);
+}
+
+.dark {
+    --bg: var(--gray7);
+    --bg-nav: linear-gradient( to right, var(--gray6), var(--gray3));
+    --bg-dropdown: var(--gray6);
+    --text : var(--gray0);
+    --border-color : var(--purple);
+    --bg-solar: var(--yellow);
+    --bg-nav-slide :var(--gray8);
+}
+
+
+.solar {
+    --gray0:#fcebd5 ;
+    --gray1:#ffd092 ;
+    --gray2:#ffaf68;
+    --gray3:#ffb667;
+    --gray4:#f0700e;
+    --gray5:#ff6a0d;
+    --gray6:#FF5C0A;
+    --gray7:#d63e02;
+    --gray8:#a72f00;
+}
+
+#dark::before {
+    background: rgb(61, 61, 61);
+}
+
+#light::before {
+    background: rgb(226, 226, 226);
+}
+
+#solar::before {
+    background: rgb(255, 153, 0);
+}
+
+/* rambow effect on logo */
+.logo{
+    font-size: 100px;
+    font-weight: 1000;
+    color: orangered;
+    cursor: pointer;
+}
+
+
+@keyframes color-rotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter : hue-rotate(360deg);
+    }
+}
+
+.logo:hover {
+    animation: color-rotate 1s;
+    animation-iteration-count: infinite;
+    animation-duration: alternate;
+}
+
+/* media query for all */
+
+/* @media only screen and (max-width: 1200px) {
+    .dropdown{
+        transform:  translateX(-50%);
+    }
+    header{
+        margin-left: 0;
+    }
+} */
+
+@media only screen and (max-width: 1200px) {
+    .dropdown{
+        transform:  translateX(-68%);
+    }
+    header{
+        margin-left: 4em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dropdown{
+        position: absolute;
+        width: 45%;
+        opacity: 0;
+        z-index: 2;
+
+        display: flex;
+        flex-direction:column;
+        align-items: flex-start;
+        height:10em;
+        margin-top: 1.5rem;
+        transform:  translateX(-40%);
+
+    }
+    header{
+        margin-left: 0;
+    }
+}
+
+/* @media only screen and (max-width: 600px) {
+    .dropdown{
+        transform:  translateX(-71%);
+    }
+    header{
+        margin-left: 0;
+    }
+    
+} */
